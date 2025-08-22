@@ -1,10 +1,15 @@
-require('dotenv').config();
 const express = require('express');
 const app = express();
+
+// Render setzt process.env.PORT automatisch
 const PORT = process.env.PORT || 3000;
 
-// Statische Dateien (Frontend, falls vorhanden)
-app.use(express.static(__dirname + '/frontend'));
+// Optional: Statische Dateien nur, wenn vorhanden
+const fs = require('fs');
+const frontendPath = __dirname + '/frontend';
+if (fs.existsSync(frontendPath)) {
+  app.use(express.static(frontendPath));
+}
 
 // Health-Check
 app.get('/health', (req, res) => {
