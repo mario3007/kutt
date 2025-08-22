@@ -1,14 +1,12 @@
 {
   "name": "kutt-render",
   "version": "1.0.0",
-  "description": "Kutt Mini-Link-Kürzer für Render Deployment",
+  "description": "Kutt deployment auf Render",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "build": "echo Build Step"
+    "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "dotenv": "^16.3.1"
+    "express": "^4.18.2"
   }
 }

@@ -1,11 +1,11 @@
 const express = require('express');
+const fs = require('fs');
 const app = express();
 
-// Render setzt process.env.PORT automatisch
+// Port von Render nutzen
 const PORT = process.env.PORT || 3000;
 
-// Optional: Statische Dateien nur, wenn vorhanden
-const fs = require('fs');
+// Statische Dateien, nur wenn vorhanden
 const frontendPath = __dirname + '/frontend';
 if (fs.existsSync(frontendPath)) {
   app.use(express.static(frontendPath));
